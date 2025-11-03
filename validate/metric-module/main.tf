@@ -15,6 +15,10 @@ variable "resource_id" {
   type = string
 }
 
+variable "email_address" {
+  type = string
+}
+
 provider "azurerm" {
   features {}
   subscription_id = var.subscription_id
@@ -31,7 +35,7 @@ module "metric-module" {
 
   location_short      = "we"
   environment         = "dev"
-  alert_email_address = "magnus.forsman@xenit.se"
+  alert_email_address = var.email_address
   resource_group_name = azurerm_resource_group.this.name
   resource_id         = var.resource_id
   metric_alerts_new = [
