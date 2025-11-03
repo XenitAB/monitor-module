@@ -1,6 +1,6 @@
 resource "azurerm_monitor_action_group" "this" {
-  name                = "ag-metric-${var.environment}-${var.location_short}"
-  short_name          = "ag-metric-${var.environment}-${var.location_short}"
+  name                = "ag-m-${var.environment}-${var.location_short}"
+  short_name          = "ag-m-${var.environment}-${var.location_short}"
   resource_group_name = var.resource_group_name
 
   email_receiver {
